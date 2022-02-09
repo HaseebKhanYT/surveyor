@@ -1,12 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="navigation" id="nav">
+      <Navbar/>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script lang="ts">
+import { Component } from 'vue-property-decorator';
+import Navbar from '@/components/Navbar.vue';
+
+export default {
+  name: 'app',
+  components: { Navbar },
+};
+</script>
 
 <style lang="scss">
 #app {
@@ -18,7 +27,8 @@
 }
 
 #nav {
-  padding: 30px;
+  // padding: 30px;
+  text-align: left;
 
   a {
     font-weight: bold;

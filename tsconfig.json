@@ -18,7 +18,8 @@
     "paths": {
       "@/*": [
         "src/*"
-      ]
+      ],
+      "tslib": ["node_modules/tslib"]
     },
     "lib": [
       "esnext",
