@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-
 import Vue from 'vue';
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';

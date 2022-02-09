@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
+  <div class="register">
     <div class="container">
         <div class="mb-3 row">
           <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
@@ -21,24 +21,34 @@
           </div>
         </div>
         <div class="mb-3 row">
-          <div class="col-sm-2">
-
-          </div>
+          <label for="inputPassword" class="col-sm-2 col-form-label"
+            >Confirm Password</label
+          >
           <div class="col-sm-10">
-            <button id="loginButton" type="button" class="btn btn-success">Log In</button>
+            <input type="password" class="form-control" id="inputPassword" placeholder="confirm password" />
           </div>
         </div>
         <div class="mb-3 row">
           <div class="col-sm-2">
+            
+          </div>
+          <div class="col-sm-10">
+            <button id="loginButton" type="button" class="btn btn-success">Sign Up</button>
+          </div>
+        </div >
+        <div class="row mb-3">
+          <div class="col-sm-2">
 
           </div>
           <div class="col-sm-10">
-            <p class="account-exist-message">
-              Don't have an account yet?
-              <strong
-                ><router-link to="/register"> Register here </router-link></strong
-              >
-            </p>
+
+          <p class="account-exist-message">
+            Already have an account?
+            <strong
+              ><router-link to="/login"> Login here </router-link></strong
+            >
+          </p>
+
           </div>
         </div>
     </div>
@@ -47,13 +57,13 @@
 
 <script lang="ts">
 export default {
-  name: "login",
+  name: "register",
   components: {},
 };
 </script>
 
 <style lang="scss">
-.login {
+.register {
   position: relative;
   height: 100vh;
   background-color: #f9fafb;
