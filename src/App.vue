@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="navigation" id="nav">
-      <Navbar/>
+      <Navbar /> <!-- add v-if="!navigation" to remove navgation bar while login --> 
     </div>
     <router-view/>
   </div>
@@ -14,6 +14,31 @@ import Navbar from '@/components/Navbar.vue';
 export default {
   name: 'app',
   components: { Navbar },
+  data() {
+    return {
+      navigation : false,
+    };
+  },
+  created(){
+    document.title = 'Surveyor | Create Polls';
+  },
+  methods: {
+    /**
+     * checkRoute checks if the user is on Login or Register page
+     */
+    // checkRoute() {
+    //   if(this.$route.name === 'Login' || this.$route.name === 'Register' ){
+    //     this.navigation = true;
+    //     return;
+    //   };
+    //   this.navigation = false;
+    // }
+  },
+  watch:{
+    // $route(){
+    //   this.checkRoute();
+    // }
+  }
 };
 </script>
 
