@@ -4,9 +4,13 @@ import Vue from 'vue';
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { getFirestore } from 'firebase/firestore';
+import { getAuth} from 'firebase/auth';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import { BootstrapVue } from 'bootstrap-vue'
+
+Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
 
@@ -20,9 +24,18 @@ const firebaseConfig = {
   measurementId: 'G-XY95PSNCTB',
 };
 
-const firebase = initializeApp(firebaseConfig);
-const analytics = getAnalytics(firebase);
-const firestore = getFirestore(firebase);
+
+export const firebaseApp = initializeApp(firebaseConfig);
+export const analytics = getAnalytics(firebaseApp);
+export const db = getFirestore(firebaseApp);
+export const auth = getAuth(firebaseApp);
+
+// export default {
+//   firebaseApp,
+//   firebaseConfig,
+//   analytics,
+//   auth,
+// };
 
 new Vue({
   router,
