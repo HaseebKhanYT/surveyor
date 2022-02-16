@@ -63,8 +63,8 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-10">
           <button
-            id="loginButton"
-            @click="signUp"
+            id="signUpButton"
+            @click.prevent="signUp"
             type="button"
             class="btn btn-success"
           >
@@ -145,7 +145,6 @@ export default {
               email: this.email,
               userId: this.userId,
             });
-            sessionStorage.setItem("userId", this.userId);
 
             onAuthStateChanged(auth, function (user): void {
               if (user) {
@@ -153,7 +152,6 @@ export default {
                 router.push({ name: "Dashboard" });
               } else {
                 // If user is not signed in
-                router.push({ name: "Login" });
               }
             });
           })
@@ -163,20 +161,6 @@ export default {
           });
       }
     },
-
-    checkAuth() {
-      onAuthStateChanged(auth, (user): void => {
-        if (user) {
-          // If user is signed in
-          this.loggedIn = true;
-          router.push({ name: "Dashboard" });
-        } else {
-          // If user is not signed in
-          this.loggedIn = false;
-        }
-      });
-    },
-
     validEmail(email: string): boolean {
       const re =
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

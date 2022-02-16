@@ -13,7 +13,9 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import PollsDisplay from "@/components/PollsDisplay.vue";
-import { component } from "vue/types/umd";
+import {onAuthStateChanged} from 'firebase/auth';
+import {auth} from '../main';
+import router from '@/router';
 
 export default {
   name: "dashboard",
@@ -25,7 +27,22 @@ export default {
       loggedIn: false,
     };
   },
-  methods: {},
+  created(){
+
+  },
+  methods: {
+    checkAuth(){
+      onAuthStateChanged(auth, (user)=>{
+              if (user) {
+                // If user is signed in
+              } else {
+                // If user is not signed in
+                router.push({ name: "Home" });
+              }
+            });
+
+    }
+  },
 };
 </script>
 
