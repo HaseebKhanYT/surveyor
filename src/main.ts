@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-
 import Vue from 'vue';
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
@@ -9,6 +8,9 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import { BootstrapVue } from 'bootstrap-vue'
+import { GChart } from "vue-google-charts";
+
+Vue.use(GChart);
 
 Vue.use(BootstrapVue);
 
@@ -24,18 +26,10 @@ const firebaseConfig = {
   measurementId: 'G-XY95PSNCTB',
 };
 
-
 export const firebaseApp = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(firebaseApp);
 export const db = getFirestore(firebaseApp);
 export const auth = getAuth(firebaseApp);
-
-// export default {
-//   firebaseApp,
-//   firebaseConfig,
-//   analytics,
-//   auth,
-// };
 
 new Vue({
   router,

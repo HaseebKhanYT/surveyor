@@ -95,7 +95,7 @@ import {
 import { collection, doc, setDoc, addDoc } from "firebase/firestore";
 import router from "@/router";
 
-export default {
+export default Vue.extend( {
   data() {
     return {
       userName: "",
@@ -144,6 +144,7 @@ export default {
               userName: this.userName,
               email: this.email,
               userId: this.userId,
+              pollCount: 0,
             });
 
             onAuthStateChanged(auth, function (user): void {
@@ -167,7 +168,7 @@ export default {
       return re.test(email);
     },
   },
-};
+});
 </script>
 
 <style lang="scss">

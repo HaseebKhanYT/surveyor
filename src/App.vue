@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="navigation" id="nav">
-      <Navbar /> <!-- add v-if="!navigation" to remove navgation bar while login --> 
+      <Navbar /> 
     </div>
     <router-view/>
   </div>

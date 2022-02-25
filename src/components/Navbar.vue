@@ -5,6 +5,9 @@
         >Surveyor</router-link
       >
       <ul class="navbar-nav">
+        <li v-show="loggedIn" class=" mx-2 nav-item">
+          <router-link class="navbar-link loginButton" to="/dashboard">Dashboard</router-link>
+        </li>
         <li v-show="!loggedIn" class="nav-item">
           <router-link class="navbar-link loginButton" to="/login">LogIn</router-link>
         </li>
@@ -33,7 +36,7 @@ export default {
     this.authCheck();
   },
   methods: {
-    authCheck() {
+    authCheck(){
       onAuthStateChanged(auth, (user): void => {
         if (user) {
           // If user is signed in

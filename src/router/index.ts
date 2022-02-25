@@ -19,7 +19,7 @@ const routes: Array<RouteConfig> = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue'),
+    component: () => import(/* webpackChunkName: "home" */ '../views/Login.vue'),
     meta: {
       title: 'Login',
     },
@@ -30,7 +30,7 @@ const routes: Array<RouteConfig> = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Register.vue'),
+    component: () => import(/* webpackChunkName: "home" */ '../views/Register.vue'),
     meta: {
       title: 'Register',
     },
@@ -44,6 +44,28 @@ const routes: Array<RouteConfig> = [
     component: () => import(/* webpackChunkName: "dashboard" */ '../views/Dashboard.vue'),
     meta: {
       title: 'Dashboard',
+    },
+  },
+  {
+    path: '/analytics/:id',
+    name: 'Analytics',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "dashboard" */ '../views/Analytics.vue'),
+    meta: {
+      title: 'Analytics',
+    },
+  },
+  {
+    path: '/polls/:id',
+    name: 'Polls',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "dashboard" */ '../views/Polls.vue'),
+    meta: {
+      title: 'Polls',
     },
   },
 ];
