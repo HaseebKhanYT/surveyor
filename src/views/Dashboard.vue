@@ -18,7 +18,7 @@ import {doc, collection, where, getDocs, query, getDoc } from 'firebase/firestor
 import {auth, db} from '../main';
 import router from '@/router';
 
-export default {
+export default Vue.extend({
   name: "dashboard",
   components: {
     PollsDisplay,
@@ -60,7 +60,7 @@ export default {
 
     }
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -4,7 +4,7 @@
 
       <div class="row justify-content-center">
         <div class="center-me col">
-          <h1 class="surveyor">Suveyor</h1>
+          <h1 class="surveyor">Surveyor</h1>
           <h3>Create polls within 30 seconds</h3>
         </div>
       </div>

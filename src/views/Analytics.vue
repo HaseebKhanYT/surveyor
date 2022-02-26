@@ -20,7 +20,7 @@ import router from "@/router";
 // import {GChart} from 'vue-google-charts';
 import GoogleChart from '@/components/GoogleChart.vue'
 
-export default {
+export default Vue.extend({
   name: "dashboard",
   components: {
     Analyze, GoogleChart
@@ -118,7 +118,7 @@ export default {
       });
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

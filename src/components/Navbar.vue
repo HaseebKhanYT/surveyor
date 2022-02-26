@@ -20,11 +20,12 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import { onAuthStateChanged, signOut } from "@firebase/auth";
 import { firebaseApp, auth } from "../main";
 import router from "@/router";
 
-export default {
+export default Vue.extend({
   data() {
     return {
       loggedIn: false,
@@ -61,7 +62,7 @@ export default {
         });
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
