@@ -20,6 +20,7 @@
 </template>
 
 <script lang="ts">
+
 import Vue from 'vue';
 import { onAuthStateChanged, signOut } from "@firebase/auth";
 import { firebaseApp, auth } from "../main";

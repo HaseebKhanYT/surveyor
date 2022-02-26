@@ -5,6 +5,7 @@
 </template>
  
 <script lang="ts">
+
 import Vue from 'vue';
 
 import { onAuthStateChanged } from "firebase/auth";
@@ -19,6 +20,7 @@ import {
 } from "firebase/firestore";
 import { auth, db } from "../main";
 import router from "@/router";
+
 
 export default Vue.extend({
   name: "Chart",
@@ -114,6 +116,7 @@ export default Vue.extend({
       });
     },
   },
+
 });
 </script>
 
