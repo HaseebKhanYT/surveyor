@@ -125,7 +125,7 @@ import {
 import { auth, db } from "../main";
 import router from "@/router";
 
-export default {
+export default Vue.extend({
   name: "PollsDisplay",
   components: {},
   data() {
@@ -227,7 +227,7 @@ export default {
     },
     routeToPollAnalytics() {},
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

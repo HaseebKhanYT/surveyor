@@ -5,7 +5,6 @@
         >Surveyor</router-link
       >
       <ul class="navbar-nav">
-
         <li v-show="loggedIn" class=" mx-2 nav-item">
           <router-link class="navbar-link loginButton" to="/dashboard">Dashboard</router-link>
         </li>
@@ -14,10 +13,6 @@
         </li>
         <li v-show="loggedIn" class="nav-item">
           <div class="navbar-link logoutButton" @click="logOut">Logout</div>
-
-        </li>
-        <li v-show="loggedIn" class="nav-item">
-          <div class="navbar-link" @click="logOut">Logout</div>
         </li>
       </ul>
     </div>
@@ -25,11 +20,13 @@
 </template>
 
 <script lang="ts">
+
+import Vue from 'vue';
 import { onAuthStateChanged, signOut } from "@firebase/auth";
 import { firebaseApp, auth } from "../main";
 import router from "@/router";
 
-export default {
+export default Vue.extend({
   data() {
     return {
       loggedIn: false,
@@ -41,7 +38,6 @@ export default {
     this.authCheck();
   },
   methods: {
-
     authCheck(){
       onAuthStateChanged(auth, (user): void => {
         if (user) {
@@ -67,7 +63,7 @@ export default {
         });
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
@@ -78,7 +74,6 @@ export default {
   text-decoration: none;
   font-weight: bold;
   color: #2c3e50;
-
 }
 .logoutButton {
   text-decoration: none;

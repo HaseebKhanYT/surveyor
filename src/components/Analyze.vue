@@ -43,7 +43,7 @@ import { auth, db } from "../main";
 import router from "@/router";
 import GoogleChart from "./GoogleChart.vue";
 
-export default {
+export default Vue.extend({
   name: "Analyze",
   components: { GoogleChart },
   data() {
@@ -168,7 +168,7 @@ export default {
         alert('Copy this link to share : '+ url);
     }
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

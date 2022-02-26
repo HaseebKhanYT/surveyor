@@ -13,13 +13,12 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import PollsDisplay from "@/components/PollsDisplay.vue";
-
 import {onAuthStateChanged} from 'firebase/auth';
 import {doc, collection, where, getDocs, query, getDoc } from 'firebase/firestore';
 import {auth, db} from '../main';
 import router from '@/router';
 
-export default {
+export default Vue.extend({
   name: "dashboard",
   components: {
     PollsDisplay,
@@ -61,7 +60,7 @@ export default {
 
     }
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

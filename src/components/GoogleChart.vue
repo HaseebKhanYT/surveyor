@@ -6,6 +6,8 @@
  
 <script lang="ts">
 
+import Vue from 'vue';
+
 import { onAuthStateChanged } from "firebase/auth";
 import {
   doc,
@@ -19,7 +21,8 @@ import {
 import { auth, db } from "../main";
 import router from "@/router";
 
-export default {
+
+export default Vue.extend({
   name: "Chart",
   components: {
   },
@@ -113,7 +116,8 @@ export default {
       });
     },
   },
-};
+
+});
 </script>
 
 <style lang="scss" scoped>

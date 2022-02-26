@@ -8,7 +8,6 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import { BootstrapVue } from 'bootstrap-vue'
-
 import { GChart } from "vue-google-charts";
 
 Vue.use(GChart);

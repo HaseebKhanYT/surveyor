@@ -69,7 +69,7 @@ import { firebaseApp, db, auth } from "../main";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "@firebase/auth";
 import router from '@/router';
 
-export default {
+export default Vue.extend( {
   data() {
     return {
       email: "",
@@ -113,7 +113,7 @@ export default {
       });
     },
   },
-};
+});
 </script>
 
 <style lang="scss">
