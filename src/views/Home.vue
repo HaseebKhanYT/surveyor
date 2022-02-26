@@ -1,23 +1,36 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Login to Unlock the power of Surveyor"/>
+    <div class="container">
+
+      <div class="row justify-content-center">
+        <div class="center-me col">
+          <h1 class="surveyor">Suveyor</h1>
+          <h3>Create polls within 30 seconds</h3>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { Component, Vue } from "vue-property-decorator";
 
 @Component({
-  components: {
-    HelloWorld,
-  },
+  components: {},
 })
 export default class Home extends Vue {}
 </script>
 
 <style lang="scss">
-  
-  
+.surveyor{
+  font-size: 10rem;
+}
+.center-me {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 </style>

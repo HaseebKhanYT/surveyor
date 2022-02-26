@@ -5,8 +5,16 @@
         >Surveyor</router-link
       >
       <ul class="navbar-nav">
+
+        <li v-show="loggedIn" class=" mx-2 nav-item">
+          <router-link class="navbar-link loginButton" to="/dashboard">Dashboard</router-link>
+        </li>
         <li v-show="!loggedIn" class="nav-item">
-          <router-link class="navbar-link" to="/login">LogIn</router-link>
+          <router-link class="navbar-link loginButton" to="/login">LogIn</router-link>
+        </li>
+        <li v-show="loggedIn" class="nav-item">
+          <div class="navbar-link logoutButton" @click="logOut">Logout</div>
+
         </li>
         <li v-show="loggedIn" class="nav-item">
           <div class="navbar-link" @click="logOut">Logout</div>
@@ -33,7 +41,8 @@ export default {
     this.authCheck();
   },
   methods: {
-    authCheck() {
+
+    authCheck(){
       onAuthStateChanged(auth, (user): void => {
         if (user) {
           // If user is signed in
@@ -65,9 +74,18 @@ export default {
 @import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 @import "../../node_modules/bootstrap-vue/dist/bootstrap-vue.css";
 
-.navbar-link {
+.loginButton {
   text-decoration: none;
   font-weight: bold;
   color: #2c3e50;
+
+}
+.logoutButton {
+  text-decoration: none;
+  font-weight: bold;
+  color: #2c3e50;
+}
+.logoutButton:hover {
+  cursor: pointer;
 }
 </style>

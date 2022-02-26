@@ -63,8 +63,8 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-10">
           <button
-            id="loginButton"
-            @click="signUp"
+            id="signUpButton"
+            @click.prevent="signUp"
             type="button"
             class="btn btn-success"
           >
@@ -95,7 +95,7 @@ import {
 import { collection, doc, setDoc, addDoc } from "firebase/firestore";
 import router from "@/router";
 
-export default {
+export default Vue.extend( {
   data() {
     return {
       userName: "",
@@ -144,8 +144,8 @@ export default {
               userName: this.userName,
               email: this.email,
               userId: this.userId,
+              pollCount: 0,
             });
-            sessionStorage.setItem("userId", this.userId);
 
             onAuthStateChanged(auth, function (user): void {
               if (user) {
@@ -153,7 +153,6 @@ export default {
                 router.push({ name: "Dashboard" });
               } else {
                 // If user is not signed in
-                router.push({ name: "Login" });
               }
             });
           })
@@ -163,27 +162,14 @@ export default {
           });
       }
     },
-
-    checkAuth() {
-      onAuthStateChanged(auth, (user): void => {
-        if (user) {
-          // If user is signed in
-          this.loggedIn = true;
-          router.push({ name: "Dashboard" });
-        } else {
-          // If user is not signed in
-          this.loggedIn = false;
-        }
-      });
-    },
-
     validEmail(email: string): boolean {
       const re =
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
     },
   },
-};
+
+});
 </script>
 
 <style lang="scss">
