@@ -168,6 +168,7 @@ export default Vue.extend( {
       return re.test(email);
     },
   },
+
 });
 </script>
 

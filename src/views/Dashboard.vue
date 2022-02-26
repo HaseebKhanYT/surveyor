@@ -13,6 +13,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import PollsDisplay from "@/components/PollsDisplay.vue";
+
 import {onAuthStateChanged} from 'firebase/auth';
 import {doc, collection, where, getDocs, query, getDoc } from 'firebase/firestore';
 import {auth, db} from '../main';
